@@ -1,214 +1,324 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Mustafa Alfaisal</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mustafa Alfaisal — Security Engineer</title>
+<style>
+  :root{
+    --bg:#0d1116;
+    --bg-panel:#12171d;
+    --line:#232a33;
+    --text:#dfe6ec;
+    --muted:#8b98a5;
+    --accent:#4fd1c5;
+    --accent-dim:#245e58;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --serif: 'Source Serif Pro', Georgia, serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.6;
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(13,17,22,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    height:64px;
+    font-family:var(--mono);
+    font-size:14px;
+  }
+  nav .name{color:var(--text); font-weight:600;}
+  nav .links a{color:var(--muted); margin-left:24px;}
+  nav .links a:hover{color:var(--accent); text-decoration:none;}
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Mustafa</strong> <span>Alfaisal</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+  /* HERO */
+  header.hero{
+    padding:100px 0 80px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .tag{
+    font-family:var(--mono);
+    color:var(--accent);
+    font-size:14px;
+    display:block;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:44px;
+    font-weight:600;
+    line-height:1.25;
+    max-width:680px;
+    color:var(--text);
+  }
+  .hero p.sub{
+    margin-top:20px;
+    max-width:600px;
+    color:var(--muted);
+    font-size:19px;
+  }
+  .hero .meta{
+    margin-top:32px;
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--muted);
+  }
+  .hero .meta span{color:var(--text);}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+  /* SECTIONS */
+  section{padding:64px 0; border-bottom:1px solid var(--line);}
+  section h2{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.02em;
+    color:var(--accent);
+    margin-bottom:28px;
+  }
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Hi, my name is Mustafa</h1>
-							</header>
-							<div class="content">
-								<p>I'm a Web Developer, UI Designer.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Get Started</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+  /* ABOUT */
+  .about p{max-width:680px; color:var(--text); margin-bottom:16px;}
+  .about p:last-child{margin-bottom:0;}
 
-				<!-- Main -->
-					<div id="main">
+  /* SKILLS */
+  .skill-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0;
+    border:1px solid var(--line);
+  }
+  .skill-cell{
+    padding:20px 22px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .skill-cell:nth-child(2n){border-right:none;}
+  .skill-cell h3{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text);
+    margin-bottom:8px;
+  }
+  .skill-cell p{color:var(--muted); font-size:15px;}
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Aliquam</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Tempus</a></h3>
-										<p>feugiat amet tempus</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Magna</a></h3>
-										<p>Lorem etiam nullam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Ipsum</a></h3>
-										<p>Nisl sed aliquam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Consequat</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
-									</header>
-								</article>
-							</section>
+  /* PROJECTS */
+  .project{
+    padding:24px 0;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:24px;
+  }
+  .project:first-of-type{border-top:none;}
+  .project .date{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--muted);
+    padding-top:2px;
+  }
+  .project h3{font-size:19px; color:var(--text); margin-bottom:8px;}
+  .project p{color:var(--muted); font-size:16px; margin-bottom:10px;}
+  .project .stack{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--accent);
+  }
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
+  /* CERTS */
+  .cert-list{list-style:none;}
+  .cert-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:14px 0;
+    border-top:1px solid var(--line);
+    font-size:16px;
+  }
+  .cert-list li:first-child{border-top:none;}
+  .cert-list .status{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--muted);
+  }
+  .cert-list .status.done{color:var(--accent);}
 
-					</div>
+  /* EXPERIENCE TIMELINE */
+  .exp{
+    padding:22px 0;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:24px;
+  }
+  .exp:first-of-type{border-top:none;}
+  .exp .date{font-family:var(--mono); font-size:13px; color:var(--muted); padding-top:2px;}
+  .exp h3{font-size:18px; color:var(--text); margin-bottom:2px;}
+  .exp .org{font-family:var(--mono); font-size:13px; color:var(--accent); margin-bottom:8px; display:block;}
+  .exp p{color:var(--muted); font-size:15px;}
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">mustafamfaisal@gmail.com</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(77) 222-91925</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>Alkaradah<br />
-										Baghdad, BGD 10001<br />
-										Iraq</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+  /* CONTACT */
+  .contact-links{
+    display:flex; gap:28px; flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:15px;
+    margin-top:8px;
+  }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Mustafa Alfaisal</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+  footer{
+    padding:32px 0;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--muted);
+  }
 
-			</div>
+  @media(max-width:640px){
+    .hero h1{font-size:32px;}
+    .skill-grid{grid-template-columns:1fr;}
+    .skill-cell{border-right:none;}
+    .project{grid-template-columns:1fr; gap:8px;}
+    nav .links a{margin-left:14px;}
+  }
+</style>
+</head>
+<body>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<nav>
+  <div class="wrap">
+    <span class="name">Mustafa Alfaisal</span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#labs">Labs</a>
+      <a href="#certs">Certs</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
-	</body>
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">SECURITY ENGINEER</span>
+    <h1>Enterprise network security, run end to end — Palo Alto, Cisco, Fortinet, and cloud.</h1>
+    <p class="sub">I design, deploy, and operate security infrastructure at production scale: firewalls, identity, SIEM, and WAF across multi-site environments. Currently extending that expertise into AWS and Palo Alto's cloud-native architecture.</p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <h2>ABOUT</h2>
+    <p>I own security infrastructure for a fintech organization across multiple data centers — firewalls, identity, endpoint policy, and web application defense on Palo Alto, Cisco, and Fortinet stacks. My background spans SOC operations, compliance audits, and enterprise security deployment, giving me a systems-level view: policy, detection, and architecture as one connected discipline rather than separate concerns.</p>
+    <p>I've built SIEM environments from scratch, led incident response, run penetration testing and red-team assessments, and delivered zero-finding compliance audits. That range is what I bring to every engagement — not just operating tools, but designing the security posture around them.</p>
+    <p>I'm now extending this into cloud-native security, working through AWS's Security Engineer path and Palo Alto's Network Security Professional track to bring the same depth to hybrid and cloud environments.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>SKILLS</h2>
+    <div class="skill-grid">
+      <div class="skill-cell">
+        <h3>Palo Alto Networks</h3>
+        <p>PAN-OS administration, Panorama, policy design, threat prevention across a full production stack.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Cisco Security</h3>
+        <p>FTD, FMC, ISE (HA, posture, TrustSec, pxGrid, TACACS+), API-driven automation.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Fortinet</h3>
+        <p>Full FortiGate/FortiWeb stack, including the FortiWeb 600F WAF in production.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>SIEM &amp; Detection</h3>
+        <p>LogRhythm, Elastic SIEM, Wazuh, Trend Vision One EDR/XDR, IDS/IPS.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Offensive &amp; Assessment</h3>
+        <p>Vulnerability scanning, penetration testing, red-team style assessments, Nmap, Metasploit.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Cloud &amp; Infrastructure</h3>
+        <p>AWS, Alibaba Cloud, Oracle Cloud (OCI), Oracle PCA, VMware, F5 load balancing.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Scripting &amp; Tooling</h3>
+        <p>Python, PowerShell, SQL, Git/GitHub.</p>
+      </div>
+      <div class="skill-cell">
+        <h3>Frameworks &amp; Compliance</h3>
+        <p>NIST CSF, MITRE ATT&amp;CK, PCI DSS, WebTrust audit standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="labs">
+  <div class="wrap">
+    <h2>LABS &amp; PROJECTS</h2>
+
+    <div class="project">
+      <div class="date">2026</div>
+      <div>
+        <h3>Automating Infrastructure Compliance with AWS Config</h3>
+        <p>Deployed AWS Config managed rules across EC2 instances and S3 buckets to detect configuration drift and non-compliant resources automatically. Built out remediation actions so violations are corrected without manual intervention, and used the Config dashboard to monitor compliance state in real time.</p>
+        <div class="stack">AWS Config · EC2 · S3 · Automated Remediation</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="date">Ongoing</div>
+      <div>
+        <h3>AWS Security Engineer — Advanced Learning Plan</h3>
+        <p>Working through a hands-on lab track covering IAM, KMS, logging and monitoring, and incident response in AWS — building toward the AWS Security Specialty certification.</p>
+        <div class="stack">IAM · KMS · CloudTrail · GuardDuty</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <h2>CERTIFICATIONS</h2>
+    <ul class="cert-list">
+      <li>AWS Security Specialty <span class="status">In progress</span></li>
+      <li>Palo Alto Networks Security Professional <span class="status">In progress</span></li>
+      <li>Google Cybersecurity Professional Certificate <span class="status done">Completed</span></li>
+      <li>Fortinet Certified Associate — Cybersecurity <span class="status done">Completed</span></li>
+      <li>Fortinet Certified Fundamentals — Cybersecurity <span class="status done">Completed</span></li>
+      <li>NATO School Oberammergau — Mobile Applications Certificate <span class="status done">Completed</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>CONTACT</h2>
+    <p>Open to remote security engineering roles.</p>
+    <div class="contact-links">
+      <a href="mailto:mustafa.albofaisal@gmail.com">Email</a>
+      <a href="https://github.com/MustafaAlfaisal" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/mustafa5alfaisal/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Mustafa Alfaisal</div>
+</footer>
+
+</body>
 </html>
